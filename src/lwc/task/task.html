@@ -1,0 +1,19 @@
+<template>
+
+    <lightning-card>
+        <template if:true={tasks}>
+            <lightning-datatable data={tasks}
+                                 columns={columns}
+                                 key-field="Id"
+                                 onsave={handleSave}
+                                 onrowaction={handleDelete}
+                                 hide-checkbox-column=true >
+            </lightning-datatable>
+        </template>
+        <template if:true={error}>
+            {error}
+        </template>
+
+    </lightning-card>
+
+</template>
